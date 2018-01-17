@@ -1,3 +1,6 @@
+#### This fork adds Symfony4 support and drops legacy Symfony2 and PHP5 support ####
+
+
 Symfony ffmpeg bundle
 =====================
 
