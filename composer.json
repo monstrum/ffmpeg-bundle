@@ -1,5 +1,5 @@
 {
-    "name": "pulse00/ffmpeg-bundle",
+    "name": "fmonts/ffmpeg-bundle",
     "type": "symfony-bundle",
     "description": "Symfony bundle to provide PHP-FFmpeg as a Symfony service (https://github.com/alchemy-fr/PHP-FFmpeg)",
     "keywords": ["multimedia", "video processing", "video", "audio processing", "audio", "avconv", "ffmpeg", "avprobe", "ffprobe"],
