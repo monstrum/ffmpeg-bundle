@@ -1,46 +1,41 @@
-#### This fork adds Symfony4 support and drops legacy Symfony2 and PHP5 support ####
-
-
 Symfony ffmpeg bundle
 =====================
 
-[![Build Status](https://travis-ci.org/pulse00/ffmpeg-bundle.svg?branch=master)](https://travis-ci.org/pulse00/ffmpeg-bundle)
-[![Latest Stable Version](https://poser.pugx.org/pulse00/ffmpeg-bundle/v/stable.svg)](https://packagist.org/packages/pulse00/ffmpeg-bundle) [![Total Downloads](https://poser.pugx.org/pulse00/ffmpeg-bundle/downloads.svg)](https://packagist.org/packages/pulse00/ffmpeg-bundle) [![Latest Unstable Version](https://poser.pugx.org/pulse00/ffmpeg-bundle/v/unstable.svg)](https://packagist.org/packages/pulse00/ffmpeg-bundle) [![License](https://poser.pugx.org/pulse00/ffmpeg-bundle/license.svg)](https://packagist.org/packages/pulse00/ffmpeg-bundle)
+[![Latest Stable Version](https://poser.pugx.org/fmonts/ffmpeg-bundle/v/stable.svg)](https://packagist.org/packages/fmonts/ffmpeg-bundle) [![Total Downloads](https://poser.pugx.org/fmonts/ffmpeg-bundle/downloads.svg)](https://packagist.org/packages/fmonts/ffmpeg-bundle) [![Latest Unstable Version](https://poser.pugx.org/fmonts/ffmpeg-bundle/v/unstable.svg)](https://packagist.org/packages/fmonts/ffmpeg-bundle) [![License](https://poser.pugx.org/fmonts/ffmpeg-bundle/license.svg)](https://packagist.org/packages/fmonts/ffmpeg-bundle)
 
 This bundle provides a simple wrapper for the [PHP_FFmpeg](https://github.com/alchemy-fr/PHP-FFmpeg) library,
 exposing the library as a Symfony service.
+
+#### This fork adds Symfony4 support and drops legacy Symfony2 and PHP5 support ####
 
 ### Download FFmpegBundle using composer
 
 Require the bundle with composer:
 
 ```bash
-$ composer require pulse00/ffmpeg-bundle "^0.6"
+$ composer require fmonts/ffmpeg-bundle "^0.7"
 ```
 
-Composer will install the bundle to your project's ``vendor/pulse00/ffmpeg-bundle`` directory.
+Composer will install the bundle to your project's ``vendor/fmonts/ffmpeg-bundle`` directory.
 
 ### Enable the bundle
 
 Enable the bundle in the kernel
+> Note: In a default Symfony application that uses Symfony Flex, bundles are enabled/disabled automatically for you when installing/removing them, so you don't need to look at or edit this bundles.php file.
 
 ```php
 <?php
-// app/AppKernel.php
+// config/bundles.php
 
-public function registerBundles()
-{
-    $bundles = array(
-      // ...
-      new Dubture\FFmpegBundle\DubtureFFmpegBundle(),
-      // ...
-    );
-}
+return [
+    // ...
+    Dubture\FFmpegBundle\DubtureFFmpegBundle::class => ['all' => true],
+];
 ```
 
 ### Configuration
 
-Configure which ffmpeg binary to use in `config.yml`:
+Configure which ffmpeg binary to use in `packages/dubture_f_fmpeg.yaml` or in your `parameters.yaml` file:
 
 ```yaml
 dubture_f_fmpeg:
@@ -67,7 +62,3 @@ $video
 // Start transcoding and save video
 $video->save(new X264(), '/your/target/folder/video.mp4');
 ```
-
-### Contributors
-
-- [patkar](https://github.com/patkar)
