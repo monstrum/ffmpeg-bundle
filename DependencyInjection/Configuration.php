@@ -17,8 +17,8 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('dubture_f_fmpeg');
+        $treeBuilder = new TreeBuilder('dubture_f_fmpeg');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()

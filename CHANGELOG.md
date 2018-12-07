@@ -1,3 +1,7 @@
+## 0.7.0
+- This version supports Symfony 4.2
+- Fixed deprecated constructing a TreeBuilder without passing root node information (https://github.com/symfony/symfony/blob/master/UPGRADE-4.2.md#config)
+
 ## 0.2.3
 
 - Added thread_count parameter - by [micronax](https://github.com/micronax)
