@@ -62,3 +62,17 @@ $video
 // Start transcoding and save video
 $video->save(new X264(), '/your/target/folder/video.mp4');
 ```
+
+### Usage with autowire
+insert these lines on your services.yaml file
+```yaml
+services:
+    _defaults:
+        autowire: true
+    ...
+    FFMpeg\FFMpeg:
+        alias: "dubture_ffmpeg.ffmpeg"
+    FFMpeg\FFProbe:
+        alias: "dubture_ffmpeg.ffprobe"
+    ...
+```
